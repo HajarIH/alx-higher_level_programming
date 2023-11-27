@@ -9,7 +9,7 @@
 
 int check_cycle(listint_t *list)
 {
-	listint_t L1, L2;
+	listint_t *L1, *L2;
 
 	if (!list || !list->next)
 		return (0);
