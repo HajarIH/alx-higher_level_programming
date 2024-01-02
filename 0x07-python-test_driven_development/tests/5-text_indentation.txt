@@ -1,0 +1,77 @@
+import module:
+   >>> text_indentation = __import__('5-text_indentation').text_indentation
+
+Test 1:
+   >>> text_indentation("Hello! How are you all")
+   Hello! How are you all
+
+Test 2:
+   >>> text_indentation("Hello. How are you? I hope you are fine:")
+   Hello.
+   <BLANKLINE>
+   How are you?
+   <BLANKLINE>
+   I hope you are fine:
+   <BLANKLINE>
+
+Test 3:
+   >>> text_indentation("Hello   .  How are you   ?")
+   Hello.
+   <BLANKLINE>
+   How are you?
+   <BLANKLINE>
+
+Test 4:
+   >>> text_indentation("    Hello  . How are you  ?   I hope you are fine   :   ")
+   Hello.
+   <BLANKLINE>
+   How are you?
+   <BLANKLINE>
+   I hope you are fine:
+   <BLANKLINE>
+
+Test 5:
+   >>> text_indentation("Hello\n\n")
+   Hello
+   <BLANKLINE>
+
+Test 6:
+   >>> text_indentation(".?:")
+   .
+   <BLANKLINE>
+   ?
+   <BLANKLINE>
+   :
+   <BLANKLINE>
+
+Test 7:
+   >>> text_indentation("?Hello.")
+   ?
+   <BLANKLINE>
+   Hello.
+   <BLANKLINE>
+
+Test 8:
+   >>> text_indentation("?\n\n.\n\n:")
+   ?
+   <BLANKLINE>
+   <BLANKLINE>
+   <BLANKLINE>
+   .
+   <BLANKLINE>
+   <BLANKLINE>
+   <BLANKLINE>
+   :
+   <BLANKLINE>
+
+Test 9:
+   >>> text_indentation(None)
+   Traceback (most recent call last):
+   ...
+   TypeError: text must be a string
+
+Test 10:
+   >>> text_indentation(9)
+   Traceback (most recent call last):
+   ...
+   TypeError: text must be a string
