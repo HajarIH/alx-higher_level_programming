@@ -1,0 +1,43 @@
+import function from module
+
+   >>> add_integer = __import__('0-add_integer').add_integer
+
+Test 1:
+
+   >>> add_integer(1)
+   99
+
+Test 2:
+
+   >>> add_integer(10)
+   108
+
+Test 3:
+
+   >>> add_integer(5.55)
+   103
+
+Test 4:
+
+   >>> add_integer(-8.99)
+   90
+
+Test 5:
+
+   >>> add_integer(2, 15)
+   17
+
+Test 6:
+
+   >>> add_integer(10000001.66666, 1111110.999999)
+   11111111
+
+Test 7:
+
+   >>> add_integer(-5, 5)
+   0
+
+Test 8:
+
+   >>> add_integer(5, -5.555)
+   0
