@@ -90,7 +90,7 @@ class Rectangle:
         return rect_1
 
     @classmethod
-    def def square(cls, size=0):
+    def square(cls, size=0):
         """a Rectangle where width == height == size
 
         Args:
