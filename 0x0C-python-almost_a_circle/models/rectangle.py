@@ -2,7 +2,7 @@
 """Module for class Rectangle"""
 from models.base import Base
 
-class Rectangle:
+class Rectangle(Base):
     """a class that inherits from Base"""
 
     def __init__(self, width, height, x=0, y=0, id=None):
@@ -55,7 +55,7 @@ class Rectangle:
 
     def validate(self, name, value, equality=True):
         """validation of setter methods"""
-        if value is not int:
+        if type(value) is not int:
             raise TypeError("{} must be an integer".format(name))
         if equality and value < 0:
             raise ValueError("{} must be >= 0".format(name))
