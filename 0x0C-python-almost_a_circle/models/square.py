@@ -41,3 +41,7 @@ class Square(Rectangle):
             self.sub_update(*args)
         elif kwargs:
             self.sub_update(**kwargs)
+
+    def to_dictionary(self):
+        """returns the dictionary representation of a Rectangle"""
+        return {"id": self.id, "size": self.width, "x": self.x, "y": self.y}
