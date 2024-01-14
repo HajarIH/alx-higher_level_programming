@@ -69,3 +69,7 @@ class Rectangle(Base):
     def display(self):
         """Method that prints rectangle"""
         print(("#" * self.width+ "\n") * self.height, end="")
+
+    def __str__(self):
+        """ returns [Rectangle] (<id>) <x>/<y> - <width>/<height>"""
+        return "[{}] ({}) {}/{} - {}/{}".format(type(self).__name__, self.id, self.x, self.y, self.width, self.height) 
