@@ -73,3 +73,23 @@ class Rectangle(Base):
     def __str__(self):
         """ returns [Rectangle] (<id>) <x>/<y> - <width>/<height>"""
         return "[{}] ({}) {}/{} - {}/{}".format(type(self).__name__, self.id, self.x, self.y, self.width, self.height) 
+
+    def sub_update(self, id=None, width=None, height=None, x=None, y=None):
+        """sub method to update attributes"""
+        if id is not None:
+            self.id = id
+        if width is not None:
+            self.width = width
+        if height is not None:
+            self.height = height
+        if x is not None:
+            self.x = x
+        if y is not None:
+            self.y = y
+
+    def update(self, *args, **kwargs):
+        """a method to update attributes"""
+        if args:
+            self.sub_update(*args)
+        elif kwargs:
+            self.sub_update(**kwargs)
