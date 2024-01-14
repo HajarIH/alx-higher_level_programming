@@ -20,6 +20,7 @@ class Rectangle:
 
     @width.setter
     def width(self, value):
+        self.validate("width", value, False)
         self.__width = value
 
     @property
@@ -29,6 +30,7 @@ class Rectangle:
 
     @height.setter
     def height(self, value):
+        self.validate("heigth", value, False)
         self.__height = value
 
     @property
@@ -38,6 +40,7 @@ class Rectangle:
 
     @x.setter
     def x(self, value):
+        self.validate("x", value, True)
         self.__x = value
 
     @property
@@ -47,4 +50,14 @@ class Rectangle:
 
     @y.setter
     def y(self, value):
+        self.validate("y", value)
         self.__y = value
+
+    def validate(self, name, value, equality=True):
+        """validation of setter methods"""
+        if value is not int:
+            raise TypeError("{} must be an integer".format(name))
+        if equality and value < 0:
+            raise ValueError("{} must be >= 0".format(name))
+        elif not equality and value <= 0:
+            raise ValueError("{} must be > 0".format(name))
