@@ -25,5 +25,12 @@ class test(unittest.TestCase):
         """test if _nb_objects is initialized to 0"""
         self.assertEqual(getattr(Base, "_Base_nb_objects"), 0)
 
+    def test_5(self):
+        """Test Base instantiation"""
+        b = Base()
+        self.assertEqual(str(type(b)), "<class 'models.base.Base'>")
+        self.assertEqual(b.__dict__, ("id": 1))
+        self.assertEqual(b.id, 1)
+
     if __name__ = "__main__":
         unittest.main()
