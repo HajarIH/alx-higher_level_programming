@@ -2,9 +2,11 @@
 """Module for class Base"""
 from json import dumps, loads
 
+
 class Base:
     """The class Base"""
     __nb_objects = 0
+
     def __init__(self, id=None):
         """Class constractor"""
         if id is not None:
