@@ -1,6 +1,9 @@
 #!/usr/bin/python3
 """Module for class Rectangle"""
+
+
 from models.base import Base
+
 
 class Rectangle(Base):
     """a class that inherits from Base"""
@@ -68,11 +71,16 @@ class Rectangle(Base):
 
     def display(self):
         """Method that prints rectangle"""
-        print("\n" * self.y + (" " * self.x + "#" * self.width+ "\n") * self.height, end="")
+        print("\n" * self.y +
+              (" " * self.x + "#" * self.width + "\n") *
+              self.height, end="")
 
     def __str__(self):
-        """ returns [Rectangle] (<id>) <x>/<y> - <width>/<height>"""
-        return "[{}] ({}) {}/{} - {}/{}".format(type(self).__name__, self.id, self.x, self.y, self.width, self.height) 
+        """returns [Rectangle] (<id>) <x>/<y> - <width>/<height>"""
+        return "[{}] ({}) {}/{} - {}/{}".format(
+                type(self).__name__,
+                self.id, self.x, self.y, self.width, self.height
+        )
 
     def sub_update(self, id=None, width=None, height=None, x=None, y=None):
         """sub method to update attributes"""
@@ -96,4 +104,5 @@ class Rectangle(Base):
 
     def to_dictionary(self):
         """returns the dictionary representation of a Rectangle"""
-        return {"id": self.id, "width": self.__width, "height": self.__height, "x": self.__x, "y": self.__y}
+        return {"id": self.id, "width": self.__width,
+                "height": self.__height, "x": self.__x, "y": self.__y}
