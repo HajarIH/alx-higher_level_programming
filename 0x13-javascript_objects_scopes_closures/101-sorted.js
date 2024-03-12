@@ -3,15 +3,15 @@ const dict = require('./101-data.js').dict;
 
 const list = Object.entries(dict);
 const val = Object.values(dict);
-const unq_val = [...new Set(val)];
+const unqval = [...new Set(val)];
 const newDict = {};
-for (let j in unq_val) {
+for (const j in unqval) {
   const l = [];
-  for (let k in list) {
-    if (list[k][1] === unq_val[j]) {
+  for (const k in list) {
+    if (list[k][1] === unqval[j]) {
       l.unshift(list[k][0]);
     }
   }
-  newDict[unq_val[j]] = l;
+  newDict[unqval[j]] = l;
 }
 console.log(newDict);
