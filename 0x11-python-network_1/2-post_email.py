@@ -11,4 +11,4 @@ email = sys.argv[2]
 data = urllib.parse.urlencode({'email': email})
 data = data.encode('utf-8')
 with urllib.request.urlopen(url, data=data) as response:
-    print("Your email is:", email)
+    print("Your email is: ", email)
