@@ -8,3 +8,6 @@ with urllib.request.urlopen('https://alx-intranet.hbtn.io/status') as response:
         'content': response.read(),
         'utf8 content': response.read().decode('utf-8')
             }
+print("Body response:")
+for k, v in resp.items():
+    print(f"\t- {k}: {v}")
