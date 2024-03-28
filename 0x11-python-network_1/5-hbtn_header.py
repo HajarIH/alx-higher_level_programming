@@ -4,5 +4,7 @@ URL and displays the value of the variable X-Request-Id"""
 import requests
 import sys
 
-url = sys.argv[1]
-
+if __name == "__main__":
+    url = sys.argv[1]
+    response = requests.get(url)
+    print(response.headers['X-Request-Id']
